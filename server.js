@@ -2,16 +2,25 @@
 let express = require('express'),
     app = express();
 
+
+// Gestion Files System
+let fs = require('fs'),
+    path = require('path');
+
 // --- middleware
 // - body-parser needed to catch and to treat information inside req.body
 let bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : true}));
 
-app.get('/', (req, res)=> {
-        res.status(200).json({"serveur" : "ok"});
-})
 
+// - Gestion des vues
+let helpers 	= require('view-helpers'),
+	consolidate = require('consolidate');
+
+app.engine('html', consolidate['mustache']);
+app.set('view engine', 'html');
+app.set('views', __dirname + '/templates');
 // ------------------------
 // ROUTES RESOURCES
 // ------------------------
@@ -33,6 +42,14 @@ app.get('/recettes',(req, res)=>{
 app.get('/recettes/:idRecette',(req, res)=>{
 	res.status(200).json(recettes_salade.find(recettes_salade => recettes_salade.id == req.params.idRecette))
 })
+
+// ------------------------
+// ROUTES VUES
+// ------------------------
+app.get('/',(req,res)=>{
+    res.render('index',{message : 'hello'})
+});
+
 
 // ------------------------
 // START SERVER
