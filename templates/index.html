@@ -5,8 +5,18 @@
     <title>Hello Evry</title>
 </head>
 <body>
+<h1>Liste de recettes</h1>
 
-<pre>{{message}}</pre>
+{{#recettes}}
+<ul>
+    <li>Id : {{id}}</li>
+    <li>Nom recette : {{nom}}</li>
+    <li>Description : {{description}}</li>
+    <li>Photo : {{photo}}</li>
+
+</ul>
+{{/recettes}}
+
 
 </body>
 </html> 

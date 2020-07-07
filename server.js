@@ -30,17 +30,26 @@ var recettes_salade = [{
 	"nom" : "cesar",
 	"description" : "préparation de la salade césar",
     "ingredients" : [ "poulet", "feuille_salade", "tomate"],
-    "photo" : "1829913150257"
+    "photo" : "photo1"
+},
+{
+	"id" : "2",
+	"nom" : "salade fruit",
+	"description" : "Meilleure salade du siècle",
+    "ingredients" : [ "ananas", "pomme", "orange", "citron"],
+    "photo" : "photo2"
 }]
 
 
 app.get('/recettes',(req, res)=>{
-	res.status(200).json(recettes_salade)
+//   res.status(200).json(recettes_salade)
+    res.render('index',{recettes : recettes_salade})
 })
 
 
 app.get('/recettes/:idRecette',(req, res)=>{
-	res.status(200).json(recettes_salade.find(recettes_salade => recettes_salade.id == req.params.idRecette))
+//   res.status(200).json(recettes_salade.find(recettes_salade => recettes_salade.id == req.params.idRecette))
+    res.render('index',{message : 'hello'})
 })
 
 // ------------------------
