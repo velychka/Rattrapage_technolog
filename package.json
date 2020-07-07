@@ -1,0 +1,32 @@
+{
+  "name": "rattrapage_technolog",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/velychka/Rattrapage_technolog.git"
+  },
+  "author": "Velychko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/velychka/Rattrapage_technolog/issues"
+  },
+  "homepage": "https://github.com/velychka/Rattrapage_technolog#readme",
+  "dependencies": {
+    "consolidate": "^0.15.1",
+    "express": "^4.17.1",
+    "mustache": "^3.0.1",
+    "view-helpers": "^0.2.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "nodejs",
+    "docker",
+    "postman"
+  ]
+}

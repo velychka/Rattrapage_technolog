@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Evry</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>Liste de recettes</h1>
+<ul>
+{{#recettes}}
+<li id="{{description}}">{{nom}}</li>
+{{/recettes}}
+</ul>
+
+
+<h2>Description recette</h2>
+<p class="description"></p>
+
+
+</body>
+
+<script>
+
+
+$( "li" ).click(function(e) {
+    $( ".description" ).append( 
+    "<p>" + e.target.id + "</p>"
+    );
+  });
+</script>
+</html> 
